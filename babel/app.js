@@ -1,11 +1,13 @@
+// import 'babel-polyfill'
+
 // es6 module
 import sum from './sum';
 // commonjs 规范
 var minus = require('./minus');
 // amd 规范
-require(['./muti'], function(muti) {
-    console.log(muti(2,4));
-})
+// require(['./muti'], function(muti) {
+//     console.log(muti(2,4));
+// })
 
 
 console.log('sum(1, 2)', sum(1, 2));
