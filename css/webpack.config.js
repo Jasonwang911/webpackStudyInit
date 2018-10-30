@@ -8,7 +8,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: './dist/',
+        // publicPath: './dist/',
         filename: '[name].bundle.js'
     },
 
@@ -18,10 +18,15 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: 'style-loader/url'
+                        loader: 'style-loader',
+                        options: {
+                            singleton: true,
+                            transform: './src/css/transform.js',
+                        }
                     },
                     {
-                        loader: 'file-loader'
+                        loader: 'css-loader'
+                        // loader: 'file-loader'
                     }
                 ]
             }
