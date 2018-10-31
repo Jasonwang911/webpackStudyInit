@@ -184,7 +184,24 @@ module.exports = {
     }
 }
 ```
-### css modules   
+
+## css-loader 
+alias: 解析别名  
+importLoader: 取决于css-loader之前有没有其他的loader作用，比如配置less、sass才会有用（@import）  
+Minimize: 是否压缩 
+modules: 是否启用
+    定义css-modules的名称： localIndentName: '[path][name]_[local]--[hash:base64:5]'
+
+
+### css modules  
+基本语法:   
+    :local    给定一个本地的局部样式  
+    :global   给定一个本地的全局样式   
+    compose   继承一段样式
+    compose ... from path  从其他css中引入一段样式  
+
+    
+
 
 ### 配置less/sass  
 

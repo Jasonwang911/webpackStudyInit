@@ -1,3 +1,11 @@
 html{
     background: red;
 }
+
+.box{
+    composes: bigBox from './common.css';
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background: skyblue;
+}
