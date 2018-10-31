@@ -194,15 +194,81 @@ modules: 是否启用
 
 
 ### css modules  
-基本语法:   
-    :local    给定一个本地的局部样式  
-    :global   给定一个本地的全局样式   
-    compose   继承一段样式
-    compose ... from path  从其他css中引入一段样式  
+基本语法:    
+    :local    给定一个本地的局部样式   
+    :global   给定一个本地的全局样式    
+    compose   继承一段样式    
+    compose ... from path  从其他css中引入一段样式   
 
-    
+base.css:   
+```
+html{
+    background: red;
+}
+
+.box{
+    composes: bigBox from './common.css';
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background: skyblue;
+}
+```
+
+common.css:  
+```
+body{
+    font-size: 40px;
+}
+
+.bigBox {
+    border: 4px solid darkgreen;
+}
+```
+
+app.js入口文件：  
+```
+import base from './css/base.css';
+import common from './css/common.css';
 
 
-### 配置less/sass  
+var app = document.getElementById('app');
+console.log(app)
+app.innerHTML = '<div class="'+ base.box +'"></div>'
+```
+
+### 配置less/sass 
+安装相关依赖   
+less-loader less    
+sass-loader node-sass   
+
+添加一个rules规则：  
+```
+{
+    test: /\.less$/,
+    use: [
+        {
+            loader: 'style-loader',
+            options: {
+                // insertInto: '#style',
+                singleton: true,
+                transform: './src/css/transform.js',
+            }
+        },
+        {
+            loader: 'css-loader',
+            options: {
+                minimize: true,
+                modules: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+            }
+        },
+        {
+            loader: 'less-loader'
+        }
+    ]
+}
+```
+
 
 ### 提取css代码--使用缓存、提取公用代码  

@@ -12,7 +12,7 @@
 //     flag = !flag;
 // },500)
 
-import base from './css/base.css';
+import base from './css/base.less';
 import common from './css/common.css';
 
 
