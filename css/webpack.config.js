@@ -11,7 +11,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         // publicPath: './dist/',
         filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js'
+        // chunkFilename: '[name].bundle.js'
     },
 
     module: {
@@ -36,6 +36,16 @@ module.exports = {
                     }
                 },
                 {
+                    loader: 'postcss-loader',
+                    options: {
+                        ident: 'postcss',
+                        plugins: [
+                            // require('autoprefixer')(),
+                            require('postcss-cssnext')()
+                        ]
+                    }
+                },
+                {
                     loader: 'less-loader'
                 }
             ]
@@ -51,16 +61,16 @@ module.exports = {
         })
     ],
 
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    // name: 'styles',
-                    // test: /\.less$/,
-                    chunks: 'all', // merge all the css chunk to one file
-                    // enforce: true
-                }
-            }
-        }
-    }
+    // optimization: {
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             styles: {
+    //                 // name: 'styles',
+    //                 // test: /\.less$/,
+    //                 chunks: 'all', // merge all the css chunk to one file
+    //                 // enforce: true
+    //             }
+    //         }
+    //     }
+    // }
 }

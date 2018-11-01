@@ -400,3 +400,37 @@ module.exports = {
     ],
 }
 ```
+
+## PostCss
+a tool for tansforming CSS with JavaScript;  运行的时机是打包的时候。一个处理css的工具，包括生态中的一些插件。  
+
+```
+npm install postcss postcss-loader autoprefixer cssnano postcss-cssnext --save-dev  
+```
+
+### Autoprefixer : 补全前缀  
+
+### CSS-nano ： 优化并压缩css  css-loader就是使用这个插件来做的   
+
+### CSS-next ： css变量 自定义选择器等
+
+
+ident: 指定插件的使用者。  
+plugins数组中导入的插件需要调用。  
+
+```
+{
+    loader: 'postcss-loader',
+    options: {
+        ident: 'postcss',
+        plugins: [
+            require('autoprefixer')(),
+        ]
+    }
+},
+```
+
+设置兼容都需要配置 Broswerslint
+
+
+## post-import 和 postcss-url

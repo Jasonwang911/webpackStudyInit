@@ -17,9 +17,8 @@ import common from './css/common.less';
 
 
 var app = document.getElementById('app');
-console.log(app)
-app.innerHTML = '<div class="'+ base.box +'"></div>'
+app.innerHTML = '<div class="'+ base.box +'"></div>';
 
-import(/* webpackChunkName:'a' */ './components/a.js').then(function(a) {
-    console.log(a)
-})
+// import(/* webpackChunkName:'a' */ './components/a.js').then(function(a) {
+//     console.log(a)
+// })
