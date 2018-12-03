@@ -4,7 +4,7 @@
 webpack在2.0以后会标识多余代码
 webpack.optimize.uglifyJS 来移除这些被标识的代码
 
-npm run pord 才开启tree shaking
+npm run pord 才开启tree shaking   
 npm webpack-deep-scope-plugin (深度tree shaking)
 
 ## CSS Three Shaking

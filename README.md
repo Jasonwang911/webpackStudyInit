@@ -10,6 +10,8 @@
 
 5. [Three Shaking](https://github.com/Jasonwang911/webpackStudyInit/tree/master/ThreeShaking)
 
+6. [文件处理](https://github.com/Jasonwang911/webpackStudyInit/tree/master/resource)
+
 
 注意：    
     1. devtool: 'source-map',    可以查看源代码     

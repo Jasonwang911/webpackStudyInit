@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 20px;
+}
+.box{
+    width: 100%;
+    background: skyblue;
+    padding: 10px 10px;
+    > div{
+       width: 375px;
+       height: 130px;
+       float: left; 
+       margin: 10px 10px;
+    }
+    .ani1 {
+        background: url(../assets/imgs/1.jpg) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .ani2 {
+        background: url(../assets/imgs/2.jpg) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .ani3 {
+        background: url(../assets/imgs/3.jpg) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .ani4 {
+        background: url(../assets/imgs/star.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
