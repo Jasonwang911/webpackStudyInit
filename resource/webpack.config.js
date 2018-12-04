@@ -54,6 +54,12 @@ module.exports = {
                             outputPath: 'dist/',
                             useRelativePath: true
                         }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDeBug: true
+                        }
                     }
                 ]
             }
